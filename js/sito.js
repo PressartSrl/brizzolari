@@ -21,6 +21,33 @@
   // Anno nel footer
   document.querySelectorAll('[data-anno]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
+  // Comparsa allo scroll e contatore "1954"
+  var riduci = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var daRivelare = document.querySelectorAll('[data-rivela]');
+  var conta = function (el) {
+    var fine = +el.getAttribute('data-conta'), inizio = fine - 54, t0 = null;
+    var passo = function (t) {
+      if (!t0) t0 = t;
+      var k = Math.min((t - t0) / 1400, 1), e = 1 - Math.pow(1 - k, 3);
+      el.textContent = Math.round(inizio + (fine - inizio) * e);
+      if (k < 1) requestAnimationFrame(passo);
+    };
+    requestAnimationFrame(passo);
+  };
+  if (riduci || !('IntersectionObserver' in window)) {
+    daRivelare.forEach(function (el) { el.classList.add('rivelato'); });
+  } else {
+    var oss = new IntersectionObserver(function (voci) {
+      voci.forEach(function (v) {
+        if (!v.isIntersecting) return;
+        v.target.classList.add('rivelato');
+        v.target.querySelectorAll('[data-conta]').forEach(conta);
+        oss.unobserve(v.target);
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
+    daRivelare.forEach(function (el) { oss.observe(el); });
+  }
+
   // Mappa caricata solo su richiesta (niente cookie di terze parti prima del consenso)
   document.querySelectorAll('[data-carica-mappa]').forEach(function (btn) {
     btn.addEventListener('click', function () {

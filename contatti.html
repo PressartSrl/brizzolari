@@ -16,6 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400;1,9..144,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script>
 <link rel="stylesheet" href="tokens.css">
 <link rel="stylesheet" href="css/sito.css">
 <script src="js/sito.js" defer></script>
@@ -52,7 +53,8 @@
 <main id="contenuto">
 
 <section class="testa-pagina">
-  <div class="contenitore">
+  <div class="contenitore testa-pagina__griglia">
+    <div class="testa-pagina__brizzo" aria-hidden="true"><picture><source srcset="assets/brizzo-logo-160.webp" type="image/webp"><img src="assets/brizzo-logo-160.png" width="160" height="178" alt=""></picture></div>
     <p class="occhiello">Contatti</p>
     <h1>Due chiacchiere col forno</h1>
     <p class="sottotitolo">Per una torta, un'informazione o per sapere se è rimasto del pane: chiamaci, scrivici o passa.</p>
@@ -61,21 +63,21 @@
 
 <section class="sezione sezione--farina" style="padding-top:clamp(40px,6vw,64px)" aria-label="Recapiti">
   <div class="contenitore griglia">
-    <article class="card contatto">
+    <article class="card contatto" data-rivela>
       <span class="contatto__icona" style="background:var(--oro)"><svg class="icona" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
       <h2>Telefono</h2>
       <p>Il modo più veloce, negli orari di apertura.</p>
       <p><strong>[TELEFONO]</strong></p>
       <a class="btn btn--primario" href="tel:[TELEFONO]">Chiama</a>
     </article>
-    <article class="card contatto">
+    <article class="card contatto" data-rivela>
       <span class="contatto__icona" style="background:var(--salvia)"><svg class="icona" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
       <h2>Email</h2>
       <p>Per richieste con calma, preventivi e torte.</p>
       <p><strong>[EMAIL]</strong></p>
       <a class="btn btn--primario" href="mailto:[EMAIL]">Scrivici</a>
     </article>
-    <article class="card contatto">
+    <article class="card contatto" data-rivela>
       <span class="contatto__icona" style="background:var(--crosta)"><svg class="icona" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
       <h2>In negozio</h2>
       <p>[INDIRIZZO]<br>37019 Peschiera del Garda (VR)</p>
@@ -93,7 +95,7 @@
       <p>Per le torte su ordinazione serve un preavviso di [PREAVVISO]. Ti richiamiamo noi per confermare.</p>
       <p class="accento" style="margin-top:var(--s-6)">rispondiamo tra un'infornata e l'altra</p>
     </div>
-    <form class="card modulo" id="modulo-contatti" data-email="[EMAIL]" novalidate>
+    <form class="card modulo" data-rivela id="modulo-contatti" data-email="[EMAIL]" novalidate>
       <div class="campo">
         <label for="f-motivo">Di cosa hai bisogno?</label>
         <select id="f-motivo" name="motivo">
@@ -140,7 +142,7 @@
 </section>
 </main>
 
-<footer class="footer sezione">
+<footer class="footer sezione bordo-onda">
   <div class="contenitore">
     <div class="footer__griglia">
       <div class="logo-riquadro">

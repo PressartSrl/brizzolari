@@ -16,6 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400;1,9..144,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script>
 <link rel="stylesheet" href="tokens.css">
 <link rel="stylesheet" href="css/sito.css">
 <script src="js/sito.js" defer></script>
@@ -52,7 +53,8 @@
 <main id="contenuto">
 
 <section class="testa-pagina">
-  <div class="contenitore">
+  <div class="contenitore testa-pagina__griglia">
+    <div class="testa-pagina__brizzo" aria-hidden="true"><picture><source srcset="assets/brizzo-logo-160.webp" type="image/webp"><img src="assets/brizzo-logo-160.png" width="160" height="178" alt=""></picture></div>
     <p class="occhiello">Orari e dove siamo</p>
     <h1>Il forno è acceso. Ecco quando.</h1>
     <p class="sottotitolo">Passa a prendere il pane caldo: ti aspettiamo a Peschiera del Garda.</p>
@@ -61,7 +63,7 @@
 
 <section class="sezione sezione--farina" aria-labelledby="titolo-orari">
   <div class="contenitore dove">
-    <div class="card card-orari">
+    <div class="card card-orari" data-rivela>
       <h2 id="titolo-orari" style="font-size:1.875rem">Orari del forno</h2>
       <dl>
         <div class="card-orari__riga"><dt>Lunedì</dt><dd>[ORARIO]</dd></div>
@@ -107,7 +109,7 @@
 </section>
 </main>
 
-<footer class="footer sezione">
+<footer class="footer sezione bordo-onda">
   <div class="contenitore">
     <div class="footer__griglia">
       <div class="logo-riquadro">
