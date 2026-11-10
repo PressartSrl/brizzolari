@@ -1,0 +1,9 @@
+// Cloudflare Workers: sito statico servito dalla radice del repo
+{
+  "name": "brizzolari",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./",
+    "html_handling": "auto-trailing-slash"
+  }
+}
