@@ -5,5 +5,7 @@
   "assets": {
     "directory": "./",
     "html_handling": "auto-trailing-slash"
-  }
+  },
+  // richiesto da `wrangler preview` (build dei branch non di produzione)
+  "previews": {}
 }
