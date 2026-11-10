@@ -1,0 +1,157 @@
+/* Brizzolari — Design System v1.0 · token e componenti base */
+
+:root {
+  /* Colori dal logo */
+  --blu: #1265A9;
+  --notte: #224968;
+  --crosta: #E29233;
+  --oro: #F5C14C;
+  --mattone: #E07D49;
+  --salvia: #8ABA8F;
+  --bruno: #5E230B;
+  --caramello: #9A541F;
+  --crema: #FAF2DF;
+  --farina: #FFFBF2;
+  --linea: #E6D3AE;          /* divisori sottili su crema */
+  --linea-scura: #48688C;    /* divisori su notte */
+
+  /* Ruoli */
+  --fondo: var(--crema);
+  --superficie: var(--farina);
+  --testo: var(--bruno);
+  --testo-2: var(--caramello);
+  --primario: var(--blu);
+  --primario-hover: var(--notte);
+
+  /* Font */
+  --font-titoli: "Baloo 2", system-ui, sans-serif;
+  --font-accento: "Fraunces", Georgia, serif;
+  --font-testo: "DM Sans", system-ui, sans-serif;
+
+  /* Scala tipografica (mobile → desktop) */
+  --fs-display: clamp(3rem, 2rem + 4.5vw, 5.5rem);
+  --fs-h1: clamp(2.5rem, 1.8rem + 3vw, 4rem);
+  --fs-h2: clamp(2rem, 1.5rem + 2vw, 3rem);
+  --fs-accento: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+  --fs-sottotitolo: clamp(1.1875rem, 1.1rem + .4vw, 1.375rem);
+  --fs-testo: 1.0625rem;
+  --fs-piccolo: .9375rem;
+  --fs-etichetta: .8125rem;
+
+  /* Spaziatura (base 4) */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 20px;
+  --s-6: 24px; --s-8: 32px; --s-10: 40px; --s-12: 48px; --s-16: 64px; --s-20: 80px;
+
+  /* Stile adesivo */
+  --bordo: 2px solid var(--bruno);
+  --r-s: 12px;
+  --r-m: 20px;
+  --r-l: 48px;
+  --r-pill: 999px;
+  --ombra-s: 4px 4px 0 var(--bruno);
+  --ombra-m: 6px 6px 0 var(--bruno);
+  --ombra-l: 12px 12px 0 var(--bruno);
+
+  --contenitore: 1200px;
+  --transizione: 140ms ease-out;
+}
+
+/* Base */
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--testo);
+  font-family: var(--font-testo);
+  font-size: var(--fs-testo);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { font-family: var(--font-titoli); font-weight: 800; line-height: 1; margin: 0 0 .4em; }
+h1 { font-size: var(--fs-h1); color: var(--primario); }
+h2 { font-size: var(--fs-h2); color: var(--primario); }
+h3 { font-size: 1.625rem; font-weight: 700; line-height: 1.1; }
+a { color: var(--primario); text-underline-offset: 3px; }
+a:hover { color: var(--primario-hover); }
+:focus-visible { outline: 3px solid var(--oro); outline-offset: 3px; border-radius: 4px; }
+img { max-width: 100%; display: block; }
+
+.contenitore { max-width: var(--contenitore); margin-inline: auto; padding-inline: var(--s-4); }
+@media (min-width: 768px) { .contenitore { padding-inline: var(--s-8); } }
+
+.display { font-family: var(--font-titoli); font-weight: 800; font-size: var(--fs-display); line-height: .92; color: var(--primario); }
+.accento { font-family: var(--font-accento); font-style: italic; font-weight: 400; font-size: var(--fs-accento); color: var(--testo-2); }
+.sottotitolo { font-size: var(--fs-sottotitolo); font-weight: 700; }
+.occhiello { font-size: var(--fs-etichetta); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--testo-2); }
+
+/* Pulsanti */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--s-2);
+  min-height: 48px; padding: 12px 26px;
+  font-family: var(--font-titoli); font-weight: 700; font-size: 1.25rem; line-height: 1;
+  border: var(--bordo); border-radius: var(--r-pill);
+  text-decoration: none; cursor: pointer;
+  transition: transform var(--transizione), box-shadow var(--transizione);
+}
+.btn--primario { background: var(--blu); color: var(--farina); box-shadow: var(--ombra-s); }
+.btn--oro { background: var(--oro); color: var(--bruno); box-shadow: var(--ombra-s); }
+.btn--contorno { background: transparent; color: var(--bruno); }
+.btn--primario:hover, .btn--oro:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--bruno); color: inherit; }
+.btn--primario:hover { color: var(--farina); }
+.btn--contorno:hover { background: var(--farina); color: var(--bruno); }
+.btn:active { transform: translate(4px, 4px); box-shadow: none; }
+
+/* Etichette */
+.tag {
+  display: inline-block; padding: 6px 14px;
+  border: var(--bordo); border-radius: var(--r-pill);
+  font-size: var(--fs-etichetta); font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--bruno); background: var(--farina);
+}
+.tag--crosta { background: var(--crosta); }
+.tag--salvia { background: var(--salvia); }
+.tag--oro { background: var(--oro); }
+.tag--blu { background: var(--blu); color: var(--farina); }
+
+/* Card */
+.card {
+  background: var(--superficie); border: var(--bordo); border-radius: var(--r-m);
+  box-shadow: var(--ombra-m); overflow: hidden;
+}
+.card-prodotto { display: flex; flex-direction: column; }
+.card-prodotto__media {
+  position: relative; aspect-ratio: 4 / 3; border-bottom: var(--bordo);
+  display: grid; place-items: center; background: var(--oro);
+}
+.card-prodotto__media img { width: 100%; height: 100%; object-fit: cover; }
+.card-prodotto__media .tag { position: absolute; top: 14px; left: 14px; }
+.card-prodotto__corpo { padding: var(--s-5); display: flex; flex-direction: column; gap: var(--s-2); flex: 1; }
+.card-prodotto__nome { font-family: var(--font-titoli); font-weight: 700; font-size: 1.625rem; line-height: 1.1; margin: 0; }
+.card-prodotto__prezzo { margin-top: auto; font-family: var(--font-titoli); font-weight: 800; font-size: 1.625rem; color: var(--blu); }
+
+.card-orari { background: var(--notte); color: var(--farina); padding: var(--s-6); }
+.card-orari h3 { color: var(--farina); }
+.card-orari__riga { display: flex; justify-content: space-between; padding: var(--s-2) 0; border-bottom: 1px solid var(--linea-scura); }
+.card-orari .accento { color: var(--oro); font-size: 1.125rem; }
+
+.cartellino {
+  display: inline-flex; align-items: center; gap: var(--s-4);
+  background: var(--oro); border: var(--bordo); border-radius: var(--r-m);
+  box-shadow: var(--ombra-m); padding: var(--s-5) var(--s-6); transform: rotate(-2deg);
+}
+
+/* Sezioni */
+.sezione { padding-block: clamp(48px, 8vw, 96px); }
+.sezione--farina { background: var(--farina); }
+.sezione--blu { background: var(--blu); color: var(--farina); }
+.sezione--blu h1, .sezione--blu h2, .sezione--blu .display { color: var(--farina); }
+.footer { background: var(--notte); color: var(--farina); }
+.footer a { color: var(--oro); }
+
+/* Logo su fondo scuro */
+.logo-riquadro { background: var(--crema); border: var(--bordo); border-radius: var(--r-l); box-shadow: var(--ombra-l); padding: var(--s-4); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  .btn:hover, .btn:active { transform: none; }
+}

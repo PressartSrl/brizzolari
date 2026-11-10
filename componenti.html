@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brizzolari – Componenti di riferimento</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;1,9..144,400;1,9..144,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<style>
+  .griglia { display: grid; gap: 24px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+  .riga { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+  .hero { display: grid; gap: 40px; align-items: center; grid-template-columns: 1fr; }
+  @media (min-width: 900px) { .hero { grid-template-columns: 1.1fr .9fr; } }
+  .hero__logo { transform: rotate(3deg); }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="sezione">
+  <div class="contenitore hero">
+    <div>
+      <p class="accento" style="margin:0 0 12px">dal 1954, con le mani in pasta</p>
+      <h1 class="display" style="margin:0 0 20px">Panificio<br>Pasticceria<br>Brizzolari</h1>
+      <p class="sottotitolo" style="margin:0 0 28px; max-width:520px">Pane, dolci e lievitati fatti in casa, ogni giorno, a Peschiera del Garda.</p>
+      <div class="riga">
+        <a class="btn btn--primario" href="#prodotti">Scopri i prodotti</a>
+        <a class="btn btn--oro" href="#torte">Ordina una torta</a>
+        <a class="btn btn--contorno" href="#orari">Dove siamo</a>
+      </div>
+    </div>
+    <div class="logo-riquadro hero__logo">
+      <img src="assets/brizzo-logo.png" alt="Brizzo, la pagnotta con gli occhiali da sole, logo del Panificio Brizzolari">
+    </div>
+  </div>
+</section>
+
+<!-- ETICHETTE -->
+<section class="sezione sezione--farina">
+  <div class="contenitore">
+    <p class="occhiello">Etichette</p>
+    <div class="riga">
+      <span class="tag tag--crosta">Appena sfornato</span>
+      <span class="tag tag--salvia">Integrale</span>
+      <span class="tag tag--blu">Novità</span>
+      <span class="tag">Su ordinazione</span>
+    </div>
+  </div>
+</section>
+
+<!-- PRODOTTI -->
+<section class="sezione" id="prodotti">
+  <div class="contenitore">
+    <p class="occhiello">Il nostro banco</p>
+    <h2>Il pane di ogni giorno</h2>
+    <div class="griglia" style="margin-top:32px">
+      <article class="card card-prodotto">
+        <div class="card-prodotto__media" style="background:var(--oro)">
+          <span class="tag tag--crosta">Appena sfornato</span>
+          <!-- sostituire con <img> della foto reale -->
+        </div>
+        <div class="card-prodotto__corpo">
+          <h3 class="card-prodotto__nome">Pane di casa</h3>
+          <p style="margin:0">[DESCRIZIONE]</p>
+          <span class="card-prodotto__prezzo">[PREZZO] €/kg</span>
+        </div>
+      </article>
+      <article class="card card-prodotto">
+        <div class="card-prodotto__media" style="background:var(--mattone)">
+          <span class="tag tag--blu">Novità</span>
+        </div>
+        <div class="card-prodotto__corpo">
+          <h3 class="card-prodotto__nome">Brioche</h3>
+          <p style="margin:0">[DESCRIZIONE]</p>
+          <span class="card-prodotto__prezzo">[PREZZO] €</span>
+        </div>
+      </article>
+      <article class="card card-prodotto">
+        <div class="card-prodotto__media" style="background:var(--salvia)">
+          <span class="tag">Integrale</span>
+        </div>
+        <div class="card-prodotto__corpo">
+          <h3 class="card-prodotto__nome">Pane integrale</h3>
+          <p style="margin:0">[DESCRIZIONE]</p>
+          <span class="card-prodotto__prezzo">[PREZZO] €/kg</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ORARI + CARTELLINO -->
+<section class="sezione sezione--farina" id="orari">
+  <div class="contenitore griglia">
+    <div class="card card-orari">
+      <h3>Orari del forno</h3>
+      <div class="card-orari__riga"><span>Lun – Sab</span><span>[ORARIO]</span></div>
+      <div class="card-orari__riga"><span>Domenica</span><span>[ORARIO]</span></div>
+      <p class="accento" style="margin:12px 0 0">Peschiera del Garda</p>
+    </div>
+    <div style="display:grid; place-items:center">
+      <div class="cartellino">
+        <div>
+          <span class="occhiello" style="color:var(--bruno)">Oggi al banco</span>
+          <div style="font-family:var(--font-titoli); font-weight:800; font-size:1.625rem; line-height:1.05">Torta del giorno</div>
+        </div>
+        <span style="font-family:var(--font-titoli); font-weight:800; font-size:2.25rem; color:var(--blu)">[€]</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FASCIA BLU -->
+<section class="sezione sezione--blu">
+  <div class="contenitore">
+    <p class="accento" style="color:var(--oro); margin:0 0 8px">dal 1954</p>
+    <h2 class="display">Il pane ha gli occhiali.</h2>
+    <a class="btn btn--oro" href="#orari" style="margin-top:16px">Vieni a trovarci</a>
+  </div>
+</section>
+
+<footer class="footer sezione">
+  <div class="contenitore">
+    <p style="font-family:var(--font-titoli); font-weight:800; font-size:1.75rem; margin:0 0 8px">Panificio Pasticceria Brizzolari</p>
+    <p style="margin:0">[INDIRIZZO] · Peschiera del Garda (VR) · <a href="tel:[TELEFONO]">[TELEFONO]</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
