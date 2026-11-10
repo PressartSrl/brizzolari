@@ -4,7 +4,8 @@
   "compatibility_date": "2026-11-01",
   "assets": {
     "directory": "./",
-    "html_handling": "auto-trailing-slash"
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
   },
   // richiesto da `wrangler preview` (build dei branch non di produzione)
   "previews": {}
