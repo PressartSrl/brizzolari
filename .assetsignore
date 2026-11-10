@@ -1,0 +1,11 @@
+.git
+.gitignore
+.assetsignore
+.DS_Store
+.wrangler
+node_modules
+wrangler.jsonc
+CLAUDE.md
+README.md
+tokens.json
+tailwind.preset.js
