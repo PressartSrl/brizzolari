@@ -50,7 +50,7 @@ html { scroll-behavior: smooth; }
 .nav a[aria-current="page"] { background: var(--oro); border-color: var(--bruno); }
 .nav .btn { margin-top: var(--s-2); }
 
-@media (min-width: 1100px) {
+@media (min-width: 1200px) {
   .menu-toggle { display: none; }
   .nav, .nav.aperto { display: block; position: static; border: 0; background: none; }
   .nav ul { flex-direction: row; align-items: center; padding: 0; gap: var(--s-2); }
@@ -349,3 +349,19 @@ main { overflow-x: clip; }
 @media (max-width: 899px) { .hero__scena { width: 86%; margin-top: var(--s-6); } }
 .recensione__virgolette { padding-top: 12px; }
 @media (min-width: 900px) { .griglia--biglietti { grid-template-columns: repeat(3, 1fr); } }
+
+/* ================= v3: barra alta con selettore lingua ================= */
+.barra-alta { background: var(--notte); color: var(--farina); font-size: var(--fs-piccolo); }
+.barra-alta__riga { display: flex; align-items: center; justify-content: space-between; gap: var(--s-4); min-height: 40px; }
+.barra-alta p { margin: 0; font-weight: 500; }
+.lingue { list-style: none; margin: 0; padding: 0; display: flex; gap: var(--s-1); }
+.lingue a {
+  display: inline-grid; place-items: center; min-width: 40px; min-height: 32px; padding: 0 var(--s-2);
+  border: 2px solid transparent; border-radius: var(--r-pill);
+  font-weight: 700; letter-spacing: .08em; color: var(--farina); text-decoration: none;
+}
+.lingue a:hover { border-color: var(--farina); color: var(--farina); }
+.lingue a[aria-current] { background: var(--oro); color: var(--bruno); border-color: var(--bruno); }
+.barra-alta :focus-visible { outline-color: var(--oro); }
+@media (max-width: 479px) { .barra-alta p { font-size: var(--fs-etichetta); } }
+@media (max-width: 479px) { .solo-largo { display: none; } }

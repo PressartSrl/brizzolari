@@ -4,13 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pagina non trovata · Panificio Brizzolari</title>
-<meta name="robots" content="noindex">
 <meta name="description" content="La pagina cercata non esiste. Torna alla home del Panificio Pasticceria Brizzolari.">
+<meta name="robots" content="noindex">
 <meta name="theme-color" content="#FAF2DF">
 <meta property="og:title" content="Pagina non trovata · Panificio Brizzolari">
 <meta property="og:description" content="La pagina cercata non esiste. Torna alla home del Panificio Pasticceria Brizzolari.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/brizzo-logo-640.png">
+<meta property="og:locale" content="it_IT">
+<meta property="og:image" content="https://brizzolari.pressart.work/assets/brizzo-logo-640.png">
 <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png">
 <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon-512.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -25,13 +26,17 @@
 <body>
 <a class="salta" href="#contenuto">Vai al contenuto</a>
 
+<div class="barra-alta">
+  <div class="contenitore barra-alta__riga">
+    <p>dal 1954<span class="solo-largo"> · Peschiera del Garda</span></p>
+    <nav aria-label="Lingua"><ul class="lingue"><li><a href="/" hreflang="it" lang="it" aria-label="Italiano" aria-current="true">IT</a></li><li><a href="/en/" hreflang="en" lang="en" aria-label="English">EN</a></li><li><a href="/fr/" hreflang="fr" lang="fr" aria-label="Français">FR</a></li><li><a href="/de/" hreflang="de" lang="de" aria-label="Deutsch">DE</a></li></ul></nav>
+  </div>
+</div>
+
 <header class="testata">
   <div class="contenitore testata__barra">
-    <a class="marchio" href="/index.html">
-      <picture>
-        <source srcset="/assets/brizzo-logo-160.webp" type="image/webp">
-        <img src="/assets/brizzo-logo-160.png" width="48" height="53" alt="">
-      </picture>
+    <a class="marchio" href="/">
+      <picture><source srcset="/assets/brizzo-logo-160.webp" type="image/webp"><img src="/assets/brizzo-logo-160.png" width="160" height="178" alt=""></picture>
       <span><span class="marchio__nome">Brizzolari</span><span class="marchio__sotto">Panificio Pasticceria</span></span>
     </a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-principale">
@@ -39,13 +44,13 @@
     </button>
     <nav class="nav" id="nav-principale" aria-label="Principale">
       <ul>
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/index.html#forno">Il forno</a></li>
-        <li><a href="/index.html#pane">Pane</a></li>
-        <li><a href="/index.html#pasticceria">Pasticceria</a></li>
-        <li><a href="/orari.html">Orari e dove siamo</a></li>
-        <li><a href="/contatti.html">Contatti</a></li>
-        <li><a class="btn btn--oro" href="/contatti.html?tipo=torta#modulo">Ordina una torta</a></li>
+        <li><a href="/" aria-current="page">Home</a></li>
+        <li><a href="/#forno">Il forno</a></li>
+        <li><a href="/#pane">Pane</a></li>
+        <li><a href="/#pasticceria">Pasticceria</a></li>
+        <li><a href="/orari">Orari e dove siamo</a></li>
+        <li><a href="/contatti">Contatti</a></li>
+        <li><a class="btn btn--oro" href="/contatti?tipo=torta#modulo">Ordina una torta</a></li>
       </ul>
     </nav>
   </div>
@@ -62,6 +67,7 @@
       <a class="btn btn--primario" href="/">Torna alla home</a>
       <a class="btn btn--contorno" href="/orari">Orari e dove siamo</a>
     </div>
+    <p style="margin-top:var(--s-8)">Page not found · Page introuvable · Seite nicht gefunden: <a href="/en/" lang="en">English</a> · <a href="/fr/" lang="fr">Français</a> · <a href="/de/" lang="de">Deutsch</a></p>
   </div>
 </section>
 </main>
@@ -70,10 +76,7 @@
   <div class="contenitore">
     <div class="footer__griglia">
       <div class="logo-riquadro">
-        <picture>
-          <source srcset="/assets/brizzo-logo-160.webp" type="image/webp">
-          <img src="/assets/brizzo-logo-160.png" width="160" height="178" alt="Brizzo, la pagnotta con gli occhiali da sole, logo del Panificio Brizzolari">
-        </picture>
+        <picture><source srcset="/assets/brizzo-logo-160.webp" type="image/webp"><img src="/assets/brizzo-logo-160.png" width="160" height="178" alt="Brizzo, la pagnotta con gli occhiali da sole, logo del Panificio Brizzolari"></picture>
       </div>
       <div>
         <h2>Panificio Pasticceria Brizzolari</h2>
@@ -84,7 +87,7 @@
         <h2>Orari</h2>
         <div class="card-orari__riga"><span>[GIORNI]</span><span>[ORARIO]</span></div>
         <div class="card-orari__riga"><span>[GIORNI]</span><span>[ORARIO]</span></div>
-        <p style="margin-top:var(--s-3)"><a href="/orari.html">Tutti gli orari</a></p>
+        <p style="margin-top:var(--s-3)"><a href="/orari">Tutti gli orari</a></p>
       </div>
       <div>
         <h2>Contatti</h2>
