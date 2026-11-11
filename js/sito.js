@@ -54,7 +54,7 @@
       var box = btn.closest('[data-mappa]');
       var iframe = document.createElement('iframe');
       iframe.src = box.getAttribute('data-mappa');
-      iframe.title = 'Mappa: Panificio Pasticceria Brizzolari, Peschiera del Garda';
+      iframe.title = box.getAttribute('data-titolo') || '';
       iframe.loading = 'lazy';
       iframe.referrerPolicy = 'no-referrer-when-downgrade';
       box.replaceChildren(iframe);
@@ -65,12 +65,14 @@
   var form = document.getElementById('modulo-contatti');
   if (!form) return;
   var motivo = form.elements.motivo;
+  var testi = JSON.parse(form.getAttribute('data-testi') || '{}');
+  var testoMotivo = function () { return motivo.options[motivo.selectedIndex].text; };
   var errore = form.querySelector('[data-errore]');
   var aggiornaTorta = function () {
-    var torta = motivo.value === 'Torta su ordinazione';
+    var torta = motivo.value === 'torta';
     form.querySelectorAll('[data-solo-torta]').forEach(function (el) { el.hidden = !torta; });
   };
-  if (new URLSearchParams(location.search).get('tipo') === 'torta') motivo.value = 'Torta su ordinazione';
+  if (new URLSearchParams(location.search).get('tipo') === 'torta') motivo.value = 'torta';
   motivo.addEventListener('change', aggiornaTorta);
   aggiornaTorta();
 
@@ -82,7 +84,7 @@
     form.querySelectorAll('[aria-invalid]').forEach(function (el) { el.removeAttribute('aria-invalid'); });
     if (mancanti.length) {
       mancanti.forEach(function (el) { el.setAttribute('aria-invalid', 'true'); });
-      errore.textContent = 'Manca qualcosa: compila i campi obbligatori e accetta l’informativa privacy.';
+      errore.textContent = testi.errore;
       errore.hidden = false;
       mancanti[0].focus();
       return;
@@ -90,14 +92,14 @@
     errore.hidden = true;
     var f = form.elements;
     var righe = [
-      'Richiesta: ' + f.motivo.value,
-      'Nome: ' + f.nome.value.trim(),
-      'Telefono: ' + f.telefono.value.trim()
+      testi.richiesta + ': ' + testoMotivo(),
+      testi.nome + ': ' + f.nome.value.trim(),
+      testi.telefono + ': ' + f.telefono.value.trim()
     ];
-    if (f.email.value.trim()) righe.push('Email: ' + f.email.value.trim());
-    if (f.motivo.value === 'Torta su ordinazione' && f.data.value) righe.push('Data di ritiro: ' + f.data.value);
+    if (f.email.value.trim()) righe.push(testi.email + ': ' + f.email.value.trim());
+    if (motivo.value === 'torta' && f.data.value) righe.push(testi.data + ': ' + f.data.value);
     righe.push('', f.messaggio.value.trim());
-    var oggetto = f.motivo.value + ' – ' + f.nome.value.trim();
+    var oggetto = (testi.lingua && testi.lingua !== 'IT' ? '[' + testi.lingua + '] ' : '') + testoMotivo() + ' \u2013 ' + f.nome.value.trim();
     location.href = 'mailto:' + form.getAttribute('data-email') +
       '?subject=' + encodeURIComponent(oggetto) + '&body=' + encodeURIComponent(righe.join('\n'));
   });
